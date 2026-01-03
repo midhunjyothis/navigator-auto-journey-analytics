@@ -11,3 +11,10 @@ The generation logic follows the assumptions and definitions
 documented in /docs and is intended to support analytics
 development, experimentation, and data quality validation.
 """
+
+# High-level flow:
+# 1. Set random seed for determinism
+# 2. Generate raw_customers based on documented assumptions
+# 3. Generate raw_vehicles using external dataset distributions
+# 4. Generate raw_events to simulate browsing-to-purchase journeys
+# 5. Write outputs to data/raw/ as parquet files
