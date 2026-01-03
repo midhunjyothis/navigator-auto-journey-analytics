@@ -18,3 +18,18 @@ development, experimentation, and data quality validation.
 # 3. Generate raw_vehicles using external dataset distributions
 # 4. Generate raw_events to simulate browsing-to-purchase journeys
 # 5. Write outputs to data/raw/ as parquet files
+
+import random
+import numpy as np
+
+# Configuration
+RANDOM_SEED = 42
+DEFAULT_CUSTOMER_COUNT = 50_000
+
+
+def set_seed(seed: int = RANDOM_SEED) -> None:
+    """
+    Sets random seeds for reproducible data generation.
+    """
+    random.seed(seed)
+    np.random.seed(seed)
