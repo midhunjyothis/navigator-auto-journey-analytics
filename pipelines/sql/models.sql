@@ -108,7 +108,10 @@ with browse as (
     anonymous_id,
     session_id,
     vehicle_id,
-    min(event_ts) as first_browse_ts
+    min(event_ts) as first_browse_ts,
+    min_by(experiment_id, event_ts) as experiment_id,
+    min_by(variant, event_ts) as variant,
+    min_by(campaign_id, event_ts) as campaign_id
   from silver.fact_events
   where event_type = 'vehicle_view'
     and vehicle_id is not null
@@ -151,6 +154,9 @@ select
   b.anonymous_id,
   b.session_id,
   b.vehicle_id,
+  b.experiment_id,
+  b.variant,
+  b.campaign_id,
   b.first_browse_ts,
   e.eligibility_ts,
   e.approved_any,
