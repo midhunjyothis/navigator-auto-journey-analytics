@@ -167,3 +167,8 @@ The pipeline runs, metrics validate, and experiment lift is observable.
 
 This is the version I would be comfortable walking through in an interview.
 
+
+## Documentation
+
+For a business-facing walkthrough of insights and decisions enabled by this platform, see:
+- docs/bi_story.md
